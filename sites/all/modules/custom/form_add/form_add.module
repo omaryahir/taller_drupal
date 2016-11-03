@@ -1,6 +1,6 @@
 <?php
 /**
- * Implements hook_menu()
+ * Implements hook_form_alter()
  * @param $form
  * @param $form_state
  * @param $form_id
@@ -26,4 +26,23 @@ function form_add_form_alter(&$form, &$form_state, $form_id) {
 
 
 
+}
+
+/**
+ * Implements hook_menu()
+ * @param $form
+ * @param $form_state
+ * @param $form_id
+ */
+function form_add_menu(){
+	$items['form-add/message'] = array (
+		'page callback' => 'greeting_text',
+		'access callback' => TRUE,
+		'title' => 'Welcome to drupal world',
+	);
+	return $items;
+}
+
+function greeting_text(){
+	return "Hola Mundo";
 }
