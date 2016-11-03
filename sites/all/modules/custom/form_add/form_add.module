@@ -17,7 +17,12 @@ function form_add_form_alter(&$form, &$form_state, $form_id) {
     dsm($form);
 
 
-    hide($form['body']);
+    $form['address_field'] = array (
+        '#type' => 'textfield',
+        '#title' => 'probando',
+        '#default_value' => t('write something'),
+        '#require' => true,
+    );
 
 
 
